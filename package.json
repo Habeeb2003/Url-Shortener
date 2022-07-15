@@ -1,0 +1,22 @@
+{
+  "name": "urlshortener",
+  "version": "1.0.0",
+  "description": "A url shortener",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Habeeb2003/Url-Shortener.git"
+  },
+  "author": "Tawaliu Habeeb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Habeeb2003/Url-Shortener/issues"
+  },
+  "homepage": "https://github.com/Habeeb2003/Url-Shortener#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  }
+}
