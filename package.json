@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Habeeb2003/Url-Shortener#readme",
   "dependencies": {
-    "dotenv": "^16.0.1"
+    "dotenv": "^16.0.1",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.2"
   }
 }
