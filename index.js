@@ -1,7 +1,6 @@
 const express = require("express")
 const { randomBytes } = require("crypto")
 const path = require("path")
-const cors = require("cors")
 const mongoose= require('mongoose');
 const Link = require("./models/Link");
 const env = require('dotenv').config({path: __dirname + '/.env'})
@@ -20,7 +19,6 @@ mongoose.connect(URI, (err) => {
     }
 })
 
-app.use(cors())
 app.use(express.json())
 
 app.get("/", (req, res) => {
