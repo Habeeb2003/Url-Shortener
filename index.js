@@ -11,8 +11,6 @@ const app = express()
 const URI = process.env.MONGODB_URI
 const portNo = process.env.PORT_NO
 
-const baseUrl = process.env.BASE_URL + portNo
-
 mongoose.connect(URI, (err) => {
     if (err) {
         throw err
@@ -34,7 +32,7 @@ app.post("/shortenLink", async (req, res) => {
         
 
         const newLink = await Link.create({ linkId: newLinkId, link })
-        const shortenedLink = baseUrl + "/li/" + newLinkId
+        const shortenedLink = req.get('host'); + "/li/" + newLinkId
         res.send({shortenedLink})
 
     } catch (err) {
@@ -50,9 +48,6 @@ app.get("/li/:link_id", async (req, res) => {
     if(link_id == "favicon.ico"){
         res.send()
     }
-        
-    // try {
-
         const originalLink = await Link.findOne({linkId: link_id})
         if(originalLink != null) {
             if(originalLink.link != null){
@@ -62,12 +57,6 @@ app.get("/li/:link_id", async (req, res) => {
         else{
             res.redirect(baseUrl)
         }
-
-    // } catch (err) {
-    //     if (err) {
-    //         throw new Error(err)
-    //     }
-    // }
 
 })
 
